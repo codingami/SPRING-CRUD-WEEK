@@ -13,8 +13,8 @@ import org.springframework.web.bind.annotation.PutMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RestController;
 
-import <your package name>.model.Product;
-import <your package name>.service.ProductService;
+import com.springcrudweek.amirahapi.model.Product;
+import com.springcrudweek.amirahapi.service.ProductService;
 
 @RestController
 public class ProductController {

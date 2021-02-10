@@ -7,13 +7,13 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
-import <your package name>.exception.ResourceNotFoundException;
-import <your package name>.model.Product;
-import <your package name>.repository.ProductRepository;
+import com.springcrudweek.amirahapi.controller.ResourceNotFoundException;
+import com.springcrudweek.amirahapi.model.Product;
+import com.springcrudweek.amirahapi.repository.ProductRepository;
 
 @Service
 @Transactional
-public class ProductServicelmpl implements ProductService {
+public class ProductServiceImpl implements ProductService {
     @Autowired
     private ProductRepository productRepository;
 
@@ -25,7 +25,7 @@ public class ProductServicelmpl implements ProductService {
 
     @Override
     public Product updateProduct(Product product) {
-        Optional < Product > productDb = this.productRepository.findById(product.getId());
+        Optional <Product> productDb = this.productRepository.findById(product.getId());
 
         if (productDb.isPresent()) {
             Product productUpdate = productDb.get();
@@ -40,7 +40,7 @@ public class ProductServicelmpl implements ProductService {
     }
 
     @Override
-    public List < Product > getAllProduct() {
+    public List <Product> getAllProduct() {
         return this.productRepository.findAll();
     }
 
